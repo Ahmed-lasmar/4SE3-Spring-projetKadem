@@ -13,33 +13,33 @@ import java.util.List;
 public class DepartementController {
     DepartementService departementService;
 
-    // http://localhost:8089/Kaddem/departement/retrieve-all-departements
+    // http://localhost:8089/Kaddem/Departement/retrieve-all-departements
     @GetMapping("/retrieve-all-departements")
     public List<Departement> getDepartement() {
         List<Departement> listEquipes = departementService.retrieveAllDepartement();
         return listEquipes;
     }
 
-    // http://localhost:8089/Kaddem/departement/retrieve-departement/8
+    // http://localhost:8089/Kaddem/Departement/retrieve-departement/8
     @GetMapping("/retrieve-departement/{departement-id}")
     public Departement retrieveDepartement(@PathVariable("departement-id") Long departementId) {
         return departementService.retrieveDepartement(departementId);
     }
 
-    // http://localhost:8089/Kaddem/departement/remove-departement/1
+    // http://localhost:8089/Kaddem/Departement/remove-departement/1
     @DeleteMapping("/remove-departement/{departement-id}")
     public void removeDepartement(@PathVariable("departement-id") Long departementId) {
         departementService.deleteDepartement(departementId);
     }
 
-    // http://localhost:8089/kaddem/departement/add-departement
+    // http://localhost:8089/kaddem/Departement/add-departement
     @PostMapping("/add-departement")
     public Departement addDepartement(@RequestBody Departement e) {
         Departement departement = departementService.addDepartement(e);
         return departement;
     }
 
-    // http://localhost:8089/kaddem/departement/update-departement
+    // http://localhost:8089/kaddem/Departement/update-departement
     @PutMapping("/update-departement")
     public Departement updateDepartement(@RequestBody Departement e) {
         Departement departement= departementService.updateDepartement(e);

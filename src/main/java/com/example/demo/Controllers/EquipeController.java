@@ -1,9 +1,7 @@
 package com.example.demo.Controllers;
 
 import com.example.demo.Service.EquipeService;
-import com.example.demo.Service.IEquipeService;
 import com.example.demo.entities.Equipe;
-import com.example.demo.repository.EquipeRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

@@ -2,9 +2,12 @@ package com.example.demo.Service;
 
 import com.example.demo.entities.Etudiant;
 import com.example.demo.repository.EtudiantRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
+@AllArgsConstructor
 public class EtudiantService implements IEtudiantService{
 
     EtudiantRepository etudiantRepository;
@@ -25,6 +28,12 @@ public class EtudiantService implements IEtudiantService{
 
     @Override
     public Etudiant retrieveEtudiant(Integer idEtudiant) {
+        return null;
+    }
+
+
+
+    public Etudiant retrieveEtudiant(Long idEtudiant) {
         return etudiantRepository.findById(idEtudiant).get();
     }
 
