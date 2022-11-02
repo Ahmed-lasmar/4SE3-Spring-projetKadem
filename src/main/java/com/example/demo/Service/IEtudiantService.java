@@ -12,7 +12,7 @@ public interface IEtudiantService {
 
     Etudiant updateEtudiant (Etudiant e);
 
-    Etudiant retrieveEtudiant (Long idEtudiant);
+    Etudiant retrieveEtudiant (Integer idEtudiant);
 
     Void deleteEtudiant(Long idEtudiant);
 }

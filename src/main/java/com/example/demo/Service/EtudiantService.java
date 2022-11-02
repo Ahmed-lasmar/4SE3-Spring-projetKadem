@@ -24,7 +24,7 @@ public class EtudiantService implements IEtudiantService{
     }
 
     @Override
-    public Etudiant retrieveEtudiant(Long idEtudiant) {
+    public Etudiant retrieveEtudiant(Integer idEtudiant) {
         return etudiantRepository.findById(idEtudiant).get();
     }
 
