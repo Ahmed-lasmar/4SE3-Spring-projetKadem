@@ -31,5 +31,6 @@ public class EtudiantService implements IEtudiantService{
     @Override
     public Void deleteEtudiant(Long idEtudiant) {
         etudiantRepository.deleteById(idEtudiant);
+        return null;
     }
 }

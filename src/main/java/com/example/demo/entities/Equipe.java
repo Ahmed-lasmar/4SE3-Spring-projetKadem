@@ -12,7 +12,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Table(name ="Equipe")
 public class Equipe implements Serializable {
     private static final long serialVersionUID = 1L;

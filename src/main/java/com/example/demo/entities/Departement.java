@@ -11,7 +11,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Table( name = "Departement")
 public class Departement implements Serializable {
     private static final long serialVersionUID = 1L;

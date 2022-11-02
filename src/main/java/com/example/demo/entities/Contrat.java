@@ -10,7 +10,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Table( name = "Contrat")
 public class Contrat implements Serializable {
     private static final long serialVersionUID = 1L;

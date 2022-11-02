@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Table(name= "DetailEquipe")
 public class DetailEquipe implements Serializable {
     private static final long serialVersionUID = 1L;
