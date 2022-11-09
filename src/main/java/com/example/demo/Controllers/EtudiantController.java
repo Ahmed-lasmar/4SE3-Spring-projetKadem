@@ -1,6 +1,7 @@
 package com.example.demo.Controllers;
 
 import com.example.demo.Service.EtudiantService;
+import com.example.demo.entities.Equipe;
 import com.example.demo.entities.Etudiant;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -44,5 +45,12 @@ public class EtudiantController {
     public Etudiant updateEtudiant(@RequestBody Etudiant e) {
         Etudiant etudiant= etudiantService.updateEtudiant(e);
         return etudiant;
+    }
+
+    // http://localhost:8089/Kaddem/etudiant/assignEtToDep
+    @PutMapping("/assignEtToDep")
+    public Etudiant uassignEtToDep(@RequestBody Long etudiantId, @RequestBody Long departementId) {
+        Etudiant etu= etudiantService.assignEtudiantToDepartement(etudiantId,departementId);
+        return etu;
     }
 }

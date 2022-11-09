@@ -46,6 +46,9 @@ public class EquipeController {
         Equipe equipe= equipeService.updateEquipe(e);
         return equipe;
     }
+
+
+
 }
 
 

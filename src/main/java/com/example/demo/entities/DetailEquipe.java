@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,5 +22,6 @@ public class DetailEquipe implements Serializable {
     private Integer salle;
     private String thematique;
     @OneToOne(mappedBy="detailEquipe")
+    @JsonIgnore
     private Equipe equipe;
 }

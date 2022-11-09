@@ -15,4 +15,7 @@ public interface IEtudiantService {
     Etudiant retrieveEtudiant (Integer idEtudiant);
 
     Void deleteEtudiant(Long idEtudiant);
+
+
+    public Etudiant assignEtudiantToDepartement (Long etudiantId, Long departementId) ;
 }

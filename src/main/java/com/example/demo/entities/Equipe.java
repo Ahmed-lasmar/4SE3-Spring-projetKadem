@@ -23,7 +23,7 @@ public class Equipe implements Serializable {
     private String nomEquipe;
     @Enumerated(EnumType.STRING)
     private Niveau niveau;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private DetailEquipe detailEquipe;
     @ManyToMany(mappedBy="equipes", cascade = CascadeType.ALL)
     private Set<Etudiant> etudiant;
