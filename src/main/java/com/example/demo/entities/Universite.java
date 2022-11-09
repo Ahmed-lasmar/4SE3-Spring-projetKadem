@@ -19,7 +19,7 @@ public class Universite implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUniv")
     private Long idUniv;
-    private String NomUniv;
+    private String nomUniv;
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Departement> departements;
 }

@@ -9,12 +9,13 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/Universite")
+@RequestMapping("/universite")
 public class UniversiteController {
     UniversiteService universiteService;
 
     // http://localhost:8089/Kaddem/universite/retrieve-all-universites
     @GetMapping("/retrieve-all-universites")
+
     public List<Universite> getUniversite() {
         List<Universite> listEquipes = universiteService.retrieveAllUniversite();
         return listEquipes;
@@ -32,14 +33,19 @@ public class UniversiteController {
         universiteService.deleteUniversite(universiteId);
     }
 
-    // http://localhost:8089/kaddem/universite/add-universite
+    // http://localhost:8089/Kaddem/universite/add-universite
     @PostMapping("/add-universite")
-    public Universite addUniversite(@RequestBody Universite e) {
-        Universite universite = universiteService.addUniversite(e);
-        return universite;
+    public Universite addUniversite(@RequestBody Universite universite) {
+        Universite universite1 = universiteService.addUniversite(universite);
+        return universite1;
+    }
+    @PostMapping("/adduniv")
+    public Universite addUniv(@RequestBody Universite universite){
+        Universite universite1= universiteService.addUniversite(universite);
+        return  universite1;
     }
 
-    // http://localhost:8089/kaddem/universite/update-universite
+    // http://localhost:8089/Kaddem/universite/update-universite
     @PutMapping("/update-universite")
     public Universite updateUniversite(@RequestBody Universite e) {
         Universite universite= universiteService.updateUniversite(e);

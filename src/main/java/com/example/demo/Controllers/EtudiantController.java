@@ -32,14 +32,14 @@ public class EtudiantController {
         etudiantService.deleteEtudiant(etudiantId);
     }
 
-    // http://localhost:8089/kaddem/etudiant/add-etudiant
+    // http://localhost:8089/Kaddem/etudiant/add-etudiant
     @PostMapping("/add-etudiant")
     public Etudiant addEtudiant(@RequestBody Etudiant e) {
         Etudiant etudiant = etudiantService.addEtudiant(e);
         return etudiant;
     }
 
-    // http://localhost:8089/kaddem/etudiant/update-etudiant
+    // http://localhost:8089/Kaddem/etudiant/update-etudiant
     @PutMapping("/update-etudiant")
     public Etudiant updateEtudiant(@RequestBody Etudiant e) {
         Etudiant etudiant= etudiantService.updateEtudiant(e);

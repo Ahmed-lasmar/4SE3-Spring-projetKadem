@@ -32,14 +32,14 @@ public class DepartementController {
         departementService.deleteDepartement(departementId);
     }
 
-    // http://localhost:8089/kaddem/Departement/add-departement
+    // http://localhost:8089/Kaddem/Departement/add-departement
     @PostMapping("/add-departement")
     public Departement addDepartement(@RequestBody Departement e) {
         Departement departement = departementService.addDepartement(e);
         return departement;
     }
 
-    // http://localhost:8089/kaddem/Departement/update-departement
+    // http://localhost:8089/Kaddem/Departement/update-departement
     @PutMapping("/update-departement")
     public Departement updateDepartement(@RequestBody Departement e) {
         Departement departement= departementService.updateDepartement(e);

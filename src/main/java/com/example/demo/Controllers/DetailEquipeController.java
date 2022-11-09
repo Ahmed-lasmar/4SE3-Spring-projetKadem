@@ -32,14 +32,14 @@ public class DetailEquipeController {
         detailEquipeService.deleteDetailEquipe(detailEquipeId);
     }
 
-    // http://localhost:8089/kaddem/DetailEquipe/add-detailEquipe
+    // http://localhost:8089/Kaddem/DetailEquipe/add-detailEquipe
     @PostMapping("/add-detailEquipe")
     public DetailEquipe addDetailEquipe(@RequestBody DetailEquipe e) {
         DetailEquipe detailEquipe = detailEquipeService.addDetailEquipe(e);
         return detailEquipe;
     }
 
-    // http://localhost:8089/kaddem/DetailEquipe/update-detailEquipe
+    // http://localhost:8089/Kaddem/DetailEquipe/update-detailEquipe
     @PutMapping("/update-detailEquipe")
     public DetailEquipe updateDetailEquipe(@RequestBody DetailEquipe e) {
         DetailEquipe detailEquipe= detailEquipeService.updateDetailEquipe(e);

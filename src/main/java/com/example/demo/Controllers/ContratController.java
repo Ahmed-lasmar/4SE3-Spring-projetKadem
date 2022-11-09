@@ -32,14 +32,14 @@ public class ContratController {
         contratService.deleteContrat(contratId);
     }
 
-    // http://localhost:8089/kaddem/Contrat/add-contrat
+    // http://localhost:8089/Kaddem/Contrat/add-contrat
     @PostMapping("/add-contrat")
     public Contrat addContrat(@RequestBody Contrat e) {
         Contrat contrat = contratService.addContrat(e);
         return contrat;
     }
 
-    // http://localhost:8089/kaddem/Contrat/update-contrat
+    // http://localhost:8089/Kaddem/Contrat/update-contrat
     @PutMapping("/update-contrat")
     public Contrat updateContrat(@RequestBody Contrat e) {
         Contrat contrat= contratService.updateContrat(e);
