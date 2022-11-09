@@ -51,4 +51,11 @@ public class UniversiteController {
         Universite universite= universiteService.updateUniversite(e);
         return universite;
     }
+
+    // http://localhost:8089/Kaddem/universite/assignUniToDep
+    @PutMapping("/assignUniToDep/{idUniversite}/{departement-id}")
+    public Universite assignUniToDep(@PathVariable("idUniversite")Long idUniversite, @PathVariable("departement-id")Long idDepartement) {
+        Universite universite= universiteService.assignUniversiteToDepartement(idUniversite,idUniversite);
+        return universite;
+    }
 }
