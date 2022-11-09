@@ -1,7 +1,6 @@
 package com.example.demo.Controllers;
 
 import com.example.demo.Service.EtudiantService;
-import com.example.demo.entities.Equipe;
 import com.example.demo.entities.Etudiant;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +16,7 @@ public class EtudiantController {
     // http://localhost:8089/Kaddem/etudiant/retrieve-all-etudiants
     @GetMapping("/retrieve-all-etudiants")
     public List<Etudiant> getEtudiant() {
-        List<Etudiant> listEquipes = etudiantService.retrieveAllEtudiant();
-        return listEquipes;
+        return etudiantService.retrieveAllEtudiant();
     }
 
     // http://localhost:8089/Kaddem/etudiant/retrieve-etudiant/8
@@ -36,21 +34,18 @@ public class EtudiantController {
     // http://localhost:8089/Kaddem/etudiant/add-etudiant
     @PostMapping("/add-etudiant")
     public Etudiant addEtudiant(@RequestBody Etudiant e) {
-        Etudiant etudiant = etudiantService.addEtudiant(e);
-        return etudiant;
+        return etudiantService.addEtudiant(e);
     }
 
     // http://localhost:8089/Kaddem/etudiant/update-etudiant
     @PutMapping("/update-etudiant")
     public Etudiant updateEtudiant(@RequestBody Etudiant e) {
-        Etudiant etudiant= etudiantService.updateEtudiant(e);
-        return etudiant;
+        return etudiantService.updateEtudiant(e);
     }
 
     // http://localhost:8089/Kaddem/etudiant/assignEtToDep
-    @PutMapping("/assignEtToDep")
-    public Etudiant uassignEtToDep(@RequestBody Long etudiantId, @RequestBody Long departementId) {
-        Etudiant etu= etudiantService.assignEtudiantToDepartement(etudiantId,departementId);
-        return etu;
+    @PutMapping("/assignEtToDep/{etudiant-id}/{departement-id}")
+    public Etudiant uassignEtToDep(@PathVariable("etudiant-id") Long etudiantId,@PathVariable("departement-id") Long departementId) {
+        return etudiantService.assignEtudiantToDepartement(etudiantId,departementId);
     }
 }

@@ -4,7 +4,6 @@ import com.example.demo.entities.Departement;
 import com.example.demo.entities.Etudiant;
 import com.example.demo.repository.DepartementRepository;
 import com.example.demo.repository.EtudiantRepository;
-import com.example.demo.repository.UniversiteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -36,15 +35,9 @@ public class EtudiantService implements IEtudiantService{
     }
 
 
-
-    public Etudiant retrieveEtudiant(Long idEtudiant) {
-        return etudiantRepository.findById(idEtudiant).get();
-    }
-
     @Override
-    public Void deleteEtudiant(Long idEtudiant) {
+    public void deleteEtudiant(Long idEtudiant) {
         etudiantRepository.deleteById(idEtudiant);
-        return null;
     }
 
     @Override
@@ -52,6 +45,7 @@ public class EtudiantService implements IEtudiantService{
         Etudiant et =etudiantRepository.findById(etudiantId).get();
         Departement de =departemenRepository.findById(departementId).get();
         et.setDepartement(de);
+        etudiantRepository.save(et);
         return et;
     }
 }
