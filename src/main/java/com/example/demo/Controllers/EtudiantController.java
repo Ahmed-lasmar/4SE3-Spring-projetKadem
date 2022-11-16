@@ -48,4 +48,10 @@ public class EtudiantController {
     public Etudiant uassignEtToDep(@PathVariable("etudiant-id") Long etudiantId,@PathVariable("departement-id") Long departementId) {
         return etudiantService.assignEtudiantToDepartement(etudiantId,departementId);
     }
+
+    // http://localhost:8089/Kaddem/etudiant/addAndAssignEtToEqAndCon
+    @PostMapping("/addAndAssignEtToEqAndCon/{etudiant-id}/{Contrat-id}")
+    public Etudiant addAndAssignEtToEqAndCon(@RequestBody Etudiant e,@PathVariable("etudiant-id") Long etudiantId,@PathVariable("Contrat-id") Long departementId) {
+        return etudiantService.addAndAssignEtudiantToEquipeAndContract(e,etudiantId,departementId);
+    }
 }

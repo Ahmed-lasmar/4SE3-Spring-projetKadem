@@ -1,8 +1,12 @@
 package com.example.demo.Service;
 
+import com.example.demo.entities.Contrat;
 import com.example.demo.entities.Departement;
+import com.example.demo.entities.Equipe;
 import com.example.demo.entities.Etudiant;
+import com.example.demo.repository.ContratRepository;
 import com.example.demo.repository.DepartementRepository;
+import com.example.demo.repository.EquipeRepository;
 import com.example.demo.repository.EtudiantRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,6 +18,8 @@ public class EtudiantService implements IEtudiantService{
 
     EtudiantRepository etudiantRepository;
     DepartementRepository departemenRepository;
+    ContratRepository contratRepository;
+    EquipeRepository equipeRepository;
     @Override
     public List<Etudiant> retrieveAllEtudiant() {
         return etudiantRepository.findAll();
@@ -47,5 +53,15 @@ public class EtudiantService implements IEtudiantService{
         et.setDepartement(de);
         etudiantRepository.save(et);
         return et;
+    }
+
+    @Override
+    public Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Long idContrat, Long idEquipe) {
+        Contrat cn = contratRepository.findById(idContrat).get();
+        Equipe eq = equipeRepository.findById(idEquipe).get();
+        e.getEquipes().add(eq);
+        e.getContrats().add(cn);
+        etudiantRepository.save(e);
+        return e;
     }
 }
