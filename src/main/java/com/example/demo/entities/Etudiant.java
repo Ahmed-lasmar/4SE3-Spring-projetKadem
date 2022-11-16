@@ -1,4 +1,5 @@
 package com.example.demo.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -25,6 +26,7 @@ public class Etudiant implements Serializable {
     @Enumerated(EnumType.STRING)
     private Option option;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="etudiant")
+    @JsonIgnore
     private Set<Contrat> contrats;
     @ManyToOne(cascade = CascadeType.ALL)
     Departement departement;

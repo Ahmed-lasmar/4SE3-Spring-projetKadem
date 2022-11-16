@@ -45,4 +45,10 @@ public class ContratController {
         Contrat contrat= contratService.updateContrat(e);
         return contrat;
     }
+
+    // http://localhost:8089/Kaddem/Contrat/affectContratToEtudiant
+    @PostMapping("/affectContratToEtudiant/{nomE}/{prenomE}")
+    public Contrat affectContratToEtudiant(@RequestBody Contrat c, @PathVariable("nomE") String nomE, @PathVariable("prenomE") String prenomE) {
+        return contratService.affectContratToEtudiant(c,nomE,prenomE);
+    }
 }

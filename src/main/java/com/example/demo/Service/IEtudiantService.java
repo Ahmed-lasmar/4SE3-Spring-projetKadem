@@ -20,4 +20,5 @@ public interface IEtudiantService {
     Etudiant assignEtudiantToDepartement (Long etudiantId, Long departementId) ;
 
     Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Long idContrat,Long idEquipe);
+
 }
