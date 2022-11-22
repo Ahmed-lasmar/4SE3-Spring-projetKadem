@@ -64,4 +64,11 @@ public class EtudiantService implements IEtudiantService{
         etudiantRepository.save(e);
         return e;
     }
+
+    @Override
+    public List<Etudiant> getEtudiantsByDepartement(Long idDepartement) {
+    Departement d = departemenRepository.getById(idDepartement);
+    
+        return null;
+    }
 }

@@ -10,4 +10,5 @@ import java.util.List;
 public interface EtudiantRepository extends JpaRepository<Etudiant,Long> {
     @Query(value = "select * from  Etudiant e where e.nomE = :n and e.prenomE = :p",nativeQuery = true)
     Etudiant retrieveEtudiantParNom(@Param("n") String nomE , @Param("p") String prenomE);
-}
+
+
