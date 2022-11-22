@@ -11,6 +11,8 @@ import com.example.demo.repository.EtudiantRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 @Service
 @AllArgsConstructor
@@ -67,8 +69,7 @@ public class EtudiantService implements IEtudiantService{
 
     @Override
     public List<Etudiant> getEtudiantsByDepartement(Long idDepartement) {
-    Departement d = departemenRepository.getById(idDepartement);
-    
-        return null;
+    List<Etudiant> et = Collections.singletonList(etudiantRepository.retrieveEtudiantPardepartement(idDepartement));
+        return et;
     }
 }

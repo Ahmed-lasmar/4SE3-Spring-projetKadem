@@ -54,4 +54,10 @@ public class EtudiantController {
     public Etudiant addAndAssignEtToEqAndCon(@RequestBody Etudiant e,@PathVariable("etudiant-id") Long etudiantId,@PathVariable("Contrat-id") Long departementId) {
         return etudiantService.addAndAssignEtudiantToEquipeAndContract(e,etudiantId,departementId);
     }
+
+    // http://localhost:8089/Kaddem/etudiant/EtudiantsByDepartement/8
+    @GetMapping("/EtudiantsByDepartement/{departement-id}")
+    public List<Etudiant> retrieveEtudiant(@PathVariable("departement-id") Long departementid) {
+        return etudiantService.getEtudiantsByDepartement(departementid);
+    }
 }
