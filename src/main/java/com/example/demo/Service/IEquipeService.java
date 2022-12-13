@@ -14,4 +14,6 @@ public interface IEquipeService {
     Equipe retrieveEquipe (Integer idEquipe);
 
     void deleteEquipe(Long idEquipe);
+
+    void faireEvoluerEquipes();
 }
